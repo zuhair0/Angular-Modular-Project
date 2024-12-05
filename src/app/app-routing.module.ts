@@ -9,7 +9,7 @@ const routes: Routes = [
   { 
     path: '', 
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule) 
-  },//this route is used for modular routing
+  },//this route is used for modular routing in lazy loading
   {path:'about', component:AboutComponent},
 ];
 
