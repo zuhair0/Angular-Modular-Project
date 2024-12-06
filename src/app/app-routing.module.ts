@@ -9,8 +9,13 @@ const routes: Routes = [
   { 
     path: '', 
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule) 
-  },//this route is used for modular routing in lazy loading
-  {path:'about', component:AboutComponent},
+  },//this route is used for modular routing in lazy loading 
+  //{path:'about', component:AboutComponent},
+  //lazy load the about component below
+  {
+    path:'about',
+    loadChildren: ()=> import('./components/about/about.component').then((m)=>m.AboutComponent)
+  }
 ];
 
 @NgModule({
