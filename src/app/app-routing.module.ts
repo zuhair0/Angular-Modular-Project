@@ -22,7 +22,7 @@ const routes: Routes = [
     loadChildren: ()=> import('./components/about/about.module').then((m)=>m.AboutModule)
   }
 ];
-
+//hghg
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
