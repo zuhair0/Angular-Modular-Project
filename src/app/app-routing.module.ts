@@ -11,10 +11,15 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then((m) => m.HomeModule) 
   },//this route is used for modular routing in lazy loading 
   //{path:'about', component:AboutComponent},
-  //lazy load the about component below
+  //lazy load the about module below
   {
-    path:'about',
-    loadChildren: ()=> import('./components/about/about.component').then((m)=>m.AboutComponent)
+    //we can call about component by giving paths at two places
+    //first location is below like path: 'about'
+    //and second is about-routing.module.ts at routes
+    //NOTE THAT IF WE GIVE PATH TO BOTH LOCATIONS OUR COMPONENT WEILL NOT LOAD AND BLACK SCREEN WILL BE COMING
+    //WE ONLY NEED TO GIVE PATH AT ONLY ONE PLACE
+    path:'',
+    loadChildren: ()=> import('./components/about/about.module').then((m)=>m.AboutModule)
   }
 ];
 
